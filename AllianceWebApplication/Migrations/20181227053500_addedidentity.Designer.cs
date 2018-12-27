@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AllianceWebApplication.Migrations
 {
-    [DbContext(typeof(EmployeeDbContext))]
+    [DbContext(typeof(AllianceDbContext))]
     [Migration("20181227053500_addedidentity")]
     partial class addedidentity
     {

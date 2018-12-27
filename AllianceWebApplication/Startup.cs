@@ -35,7 +35,7 @@ namespace AllianceWebApplication
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<EmployeeDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));
+            services.AddDbContext<AllianceDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

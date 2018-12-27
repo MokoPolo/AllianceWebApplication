@@ -3,14 +3,16 @@ using AllianceWebApplication.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AllianceWebApplication.Migrations
 {
     [DbContext(typeof(AllianceDbContext))]
-    partial class EmployeeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181227152348_initialalliancestructure")]
+    partial class initialalliancestructure
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,27 +33,6 @@ namespace AllianceWebApplication.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("AllianceMembers");
-                });
-
-            modelBuilder.Entity("AllianceWebApplication.Context.MemberRaidPlacement", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<long>("AllianceMemberID");
-
-                    b.Property<string>("Path");
-
-                    b.Property<long>("RaidEventID");
-
-                    b.Property<long>("RaidLevelID");
-
-                    b.Property<int>("StrikeTeam");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("MemberRaidPlacement");
                 });
 
             modelBuilder.Entity("AllianceWebApplication.Context.RaidEvent", b =>
