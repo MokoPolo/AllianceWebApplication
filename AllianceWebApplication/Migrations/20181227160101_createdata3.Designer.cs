@@ -3,14 +3,16 @@ using AllianceWebApplication.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AllianceWebApplication.Migrations
 {
     [DbContext(typeof(AllianceDbContext))]
-    partial class EmployeeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181227160101_createdata3")]
+    partial class createdata3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -89,17 +91,6 @@ namespace AllianceWebApplication.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("MemberRaidPlacement");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1L,
-                            AllianceMemberID = 1L,
-                            Path = "A",
-                            RaidEventID = 1L,
-                            RaidLevelID = 1L,
-                            StrikeTeam = 1
-                        });
                 });
 
             modelBuilder.Entity("AllianceWebApplication.Context.RaidEvent", b =>

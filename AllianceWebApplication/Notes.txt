@@ -1,2 +1,5 @@
 ﻿https://docs.microsoft.com/en-us/ef/core/get-started/install/
 https://www.c-sharpcorner.com/article/code-first-approach-in-asp-net-core-mvc-with-ef-core-migration/
+
+add-migration initialalliancestructure3
+update-database initialalliancestructure3
