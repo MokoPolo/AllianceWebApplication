@@ -193,7 +193,7 @@ ClientBin/
 *.pfx
 *.publishsettings
 appsettings.json
-Migrations/
+
 node_modules/
 orleans.codegen.cs
 
