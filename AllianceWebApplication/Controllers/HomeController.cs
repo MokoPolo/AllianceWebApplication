@@ -12,16 +12,9 @@ namespace AllianceWebApplication.Controllers
     {
         public IActionResult Index()
         {
-            Contact contact = null;
-            return View(contact);
+            return View();
         }
-        [HttpGet]
-        public IActionResult Contact()
-        {
-            var model = new Contact { };
 
-            return PartialView("_ContactModalPartial", model);
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
