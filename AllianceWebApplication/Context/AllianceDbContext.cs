@@ -11,11 +11,11 @@ namespace AllianceWebApplication.Context
         {
         }
 
-        DbSet<RaidEvent> RaidEvents { get; set; }
-        DbSet<RaidLevel> RaidLevels { get; set; }
+        public DbSet<RaidEvent> RaidEvents { get; set; }
+        public DbSet<RaidLevel> RaidLevels { get; set; }
         public DbSet<AllianceMember> AllianceMembers { get; set; }
-        DbSet<MemberRaidPlacement> MemberRaidPlacement { get; set; }
-        DbSet<DailyRaidResults> DailyRaidResults { get; set; }
+        public DbSet<MemberRaidPlacement> MemberRaidPlacement { get; set; }
+        public DbSet<DailyRaidResults> DailyRaidResults { get; set; }
         //DbSet<Employee> Employees { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

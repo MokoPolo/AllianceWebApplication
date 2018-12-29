@@ -9,19 +9,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AllianceWebApplication.Controllers
 {
-    public class MemberController : Controller
+    public class RaidController : Controller
     {
         private AllianceDbContext _context;
-        MemberService _service;
-
-        public MemberController (AllianceDbContext entities)
+        RaidService _service;
+        public RaidController(AllianceDbContext entities)
         {
             _context = entities;
-            _service = new MemberService(_context);
+            _service = new RaidService(_context);
         }
         public IActionResult Index()
         {
-            //ViewData["Message"] = "Show members";
             var model = _service.GetAll();
             return View(model);
         }
@@ -30,20 +28,18 @@ namespace AllianceWebApplication.Controllers
         {
             var model = _service.Get(id);
 
-            return PartialView("_EditMemberPartial", model);
+            return PartialView("_EditRaidPartial", model);
         }
 
         [HttpPost]
-        public IActionResult Edit(MemberModel model)
+        public IActionResult Edit(RaidModel model)
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("index", _service.GetAll());
+                _service.Save(model);
             }
-            else
-            {
-                return PartialView("_EditMemberPartial", model);
-            }
+            return PartialView("_EditRaidPartial", model);
+
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AllianceWebApplication.Service
 {
-    public class BaseService
+    public abstract class BaseService
     {
         protected AllianceDbContext _context;
         public BaseService (AllianceDbContext context)
