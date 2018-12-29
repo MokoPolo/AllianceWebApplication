@@ -12,7 +12,6 @@ namespace AllianceWebApplication.Context
         }
 
         public DbSet<RaidEvent> RaidEvents { get; set; }
-        public DbSet<RaidLevel> RaidLevels { get; set; }
         public DbSet<AllianceMember> AllianceMembers { get; set; }
         public DbSet<MemberRaidPlacement> MemberRaidPlacement { get; set; }
         public DbSet<DailyRaidResults> DailyRaidResults { get; set; }
@@ -23,20 +22,17 @@ namespace AllianceWebApplication.Context
             var dadPool = new AllianceMember() { ID = 1, Name = "DadPool", Active = true };
             modelBuilder.Entity<AllianceMember>().HasData(dadPool);
 
-            var ultimusRaid = new RaidEvent() { ID = 1, Name = "Ultimus" };
+            var ultimusRaid = new RaidEvent() { ID = 1, Name = "Ultimus", Active = true };
             modelBuilder.Entity<RaidEvent>().HasData(ultimusRaid);
-
-            var ultimusRaidLevel = new RaidLevel() { ID = 1, Name = "VI", Active = true, RaidEventID = ultimusRaid.ID };
-            modelBuilder.Entity<RaidLevel>().HasData(ultimusRaidLevel);
 
             modelBuilder.Entity<DailyRaidResults>().HasData(
                 new DailyRaidResults() { ID = 1, AllianceMemberID = dadPool.ID, RaidEventID = ultimusRaid.ID,
-                    RaidLevelID = ultimusRaidLevel.ID, Damage = 654654}
+                    Damage = 654654}
                 );
 
             modelBuilder.Entity<MemberRaidPlacement>().HasData(
                 new MemberRaidPlacement() { ID = 1, AllianceMemberID = dadPool.ID, RaidEventID = ultimusRaid.ID,
-                    RaidLevelID = ultimusRaidLevel.ID, StrikeTeam = 1, Path = "A"}
+                    StrikeTeam = 1, Path = "A"}
                 );
             //modelBuilder.Entity<Employee>().HasData(
             //    new Employee() { EmployeeId = 1, Name = "John", Designation = "Developer", Address = "New York", CompanyName = "XYZ Inc", Salary = 30000 },

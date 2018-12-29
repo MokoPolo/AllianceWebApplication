@@ -16,5 +16,7 @@ namespace AllianceWebApplication.Context
         public string Name { get; set; }
 
         public string Notes { get; set; }
+
+        public bool Active { get; set; }
     }
 }

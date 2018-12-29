@@ -18,6 +18,7 @@ namespace AllianceWebApplication.Service
                 ID = a.ID,
                 Name = a.Name,
                 Notes = a.Notes,
+                Active = a.Active
             });
         }
 
@@ -31,6 +32,7 @@ namespace AllianceWebApplication.Service
                     ID = result.ID,
                     Name = result.Name,
                     Notes = result.Notes,
+                    Active = result.Active
                 };
         }
 
@@ -48,7 +50,7 @@ namespace AllianceWebApplication.Service
 
             data.Name = model.Name;
             data.Notes = model.Notes;
-
+            data.Active = model.Active;
             _context.SaveChanges();
         }
     }
