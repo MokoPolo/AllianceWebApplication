@@ -14,8 +14,6 @@ namespace AllianceWebApplication.Context
         public long ID { get; set; }
         [ForeignKey("RaidEvent")]
         public long RaidEventID { get; set; }
-        [ForeignKey("RaidLevel")]
-        public long RaidLevelID { get; set; }
         [ForeignKey("AllianceMember")]
         public long AllianceMemberID { get; set; }
         public int StrikeTeam { get; set; }

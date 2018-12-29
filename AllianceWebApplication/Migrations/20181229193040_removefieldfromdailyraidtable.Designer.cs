@@ -3,14 +3,16 @@ using AllianceWebApplication.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AllianceWebApplication.Migrations
 {
     [DbContext(typeof(AllianceDbContext))]
-    partial class EmployeeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181229193040_removefieldfromdailyraidtable")]
+    partial class removefieldfromdailyraidtable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,6 +81,8 @@ namespace AllianceWebApplication.Migrations
 
                     b.Property<long>("RaidEventID");
 
+                    b.Property<long>("RaidLevelID");
+
                     b.Property<int>("StrikeTeam");
 
                     b.HasKey("ID");
@@ -92,6 +96,7 @@ namespace AllianceWebApplication.Migrations
                             AllianceMemberID = 1L,
                             Path = "A",
                             RaidEventID = 1L,
+                            RaidLevelID = 0L,
                             StrikeTeam = 1
                         });
                 });

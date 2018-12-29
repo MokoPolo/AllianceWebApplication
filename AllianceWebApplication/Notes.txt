@@ -11,3 +11,7 @@ Write unit tests. Am I using injection correctly? public MemberController (Allia
 Look at controller. I declared context for each controller. That bad?
 Are my services ok? Do I create model like that?
 How do I know when to code async?
+
+dragging divs around for roster
+https://stackoverflow.com/questions/5451787/attach-draggable-div-to-another-div
+http://jsfiddle.net/wfG3L/5/
