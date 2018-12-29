@@ -3,3 +3,11 @@ https://www.c-sharpcorner.com/article/code-first-approach-in-asp-net-core-mvc-wi
 
 add-migration initialalliancestructure3
 update-database initialalliancestructure3
+
+
+
+TODO
+Write unit tests. Am I using injection correctly? public MemberController (AllianceDbContext entities) or IDbContext or something?
+Look at controller. I declared context for each controller. That bad?
+Are my services ok? Do I create model like that?
+How do I know when to code async?

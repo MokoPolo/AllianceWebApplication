@@ -12,26 +12,15 @@ namespace AllianceWebApplication.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            Contact contact = null;
+            return View(contact);
         }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
+        [HttpGet]
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            var model = new Contact { };
 
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            return PartialView("_ContactModalPartial", model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

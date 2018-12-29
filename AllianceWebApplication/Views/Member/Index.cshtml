@@ -1,0 +1,35 @@
+﻿
+@model IEnumerable<MemberModel>
+@{
+    ViewData["Title"] = "Alliance Members";
+}
+
+<h2>View</h2>
+<h3>@ViewData["Message"]</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>
+                    <button class="btn btn-primary" data-toggle="ajax-modal" data-id="@item.ID" data-url="@Url.Action("Edit")">Edit</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="ajax-modal"
+        data-url="@Url.Action("Edit")">
+    Add contact
+</button>
+
+<!-- Modal placeholder -->
+<div id="modal-placeholder"></div>

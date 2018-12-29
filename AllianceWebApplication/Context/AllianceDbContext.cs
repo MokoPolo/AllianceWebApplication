@@ -13,7 +13,7 @@ namespace AllianceWebApplication.Context
 
         DbSet<RaidEvent> RaidEvents { get; set; }
         DbSet<RaidLevel> RaidLevels { get; set; }
-        DbSet<AllianceMember> AllianceMembers { get; set; }
+        public DbSet<AllianceMember> AllianceMembers { get; set; }
         DbSet<MemberRaidPlacement> MemberRaidPlacement { get; set; }
         DbSet<DailyRaidResults> DailyRaidResults { get; set; }
         //DbSet<Employee> Employees { get; set; }
